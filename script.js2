@@ -1,0 +1,252 @@
+"use strict";
+
+document.addEventListener("DOMContentLoaded", () => {
+
+const botao = document.getElementById("modoClaroEscuro");
+const body = document.body;
+
+botao.addEventListener("click", () => {
+
+    body.classList.toggle("dark-mode");
+
+} );
+
+// Acima é criado as constantes do botão que irá mudar a cor tema da página, usando o id criado no arquivo HTML //
+// E temos a constante body, que pega diretamente da tag HTML, para fazer a transição de tema //
+
+//----------------------------------------------------------------------------------------------------//
+
+const NOME = "João Pedro";
+let tituloProfissional = "Garoto de Programa/ Faço bastante coisa";
+let minhaBio = "Muito massa!. Estou gostando da programação" + "Antes eu Sofria. Agora estou aprendendo cada vez mais";
+
+let anoFormatura = 2026;
+let mesFormatura = 12;
+let diaFormatura = 31;
+let anoIngresso = 2025;
+let mesIngresso = 4;
+let diaIngresso = 17;
+
+let hoje = new Date(); //Dia Atual
+let mesAtual = hoje.getMonth() + 1;//Mes Atual
+let anoAtual = hoje.getFullYear(); // Ano Atual
+let diaAtual = hoje.getDate(); //Dia Atual
+
+let indefinido;
+let nulo = null;
+
+let curso = {
+    nome: "Desenvolvimento de Sistemas",
+    ano: 2026,
+    displinaAtual: "Linguagens de Programação"
+};
+
+console.log(typeof anoFormatura);
+console.log(typeof NOME);
+console.log(typeof tituloProfissional);
+console.log(typeof minhaBio);
+console.log(typeof anoIngresso);
+console.log(typeof indefinido);
+console.log(typeof nulo);
+console.log(typeof curso);
+
+console.log(typeof anoRestante);
+console.log(typeof mesRestante);
+console.log(typeof diaRestante);
+
+document.getElementById("meuNome").innerText = NOME;
+document.getElementById("titulo").innerText = tituloProfissional;
+document.getElementById("minhaBio").innerText = minhaBio;
+document.getElementById("anoFormatura").innerText = anoFormatura;
+
+document.getElementById("tempoRestante").innerText =
+`Tempo restante para formatura: ${anoFormatura - anoAtual} anos `;
+
+if (anoFormatura - anoAtual <= 0) {
+    document.getElementById("tempoRestante").innerText =
+    ` Tempo restante para formatura: ${mesFormatura - mesAtual} Meses e ${diaFormatura - diaAtual} Dias `;
+} 
+else if (anoFormatura - anoAtual === 1) {
+    document.getElementById("tempoRestante").innerText =
+    `Tempo restante para formatura: ${anoAtual - anoIngresso} Ano, ${mesFormatura - mesAtual} Meses e ${diaFormatura - diaAtual} Dias`;
+} 
+else {
+    document.getElementById("tempoRestante").innerText =
+    `Tempo restante para formatura: ${anoAtual - anoIngresso} Anos, ${mesFormatura - mesAtual} Meses e ${diaFormatura - diaAtual} Dias`;
+}
+
+let diasRestantes = diaFormatura - diaAtual;
+let mesesRestantes = mesFormatura - mesAtual;
+let anosRestantes = anoFormatura - anoAtual;
+
+if (diasRestantes <= 0 && mesesRestantes <= 0 && anosRestantes <= 0) {
+    document.getElementById("tempoRestante").innerText = `Curso Concluído!`;
+}
+document.getElementById("nota")
+let nota = 8;
+let aprovado = (nota >= 6) ? "Aprovado" : "Reprovado";
+
+document.write(`<p> Nota: ${nota} - ${aprovado} </p>`);
+
+let diaSemana = hoje.getDay();
+
+let diaEscrito;
+
+switch (diaSemana) {
+    case 0:  diaEscrito = "Domingo"; break;
+    case 1:  diaEscrito = "Segunda-Feira"; break;
+    case 2:  diaEscrito = "Terça-Feira"; break;
+    case 3:  diaEscrito = "Quarta-Feira"; break;
+    case 4:  diaEscrito = "Quinta-Feira"; break;
+    case 5:  diaEscrito = "Sexta-Feira"; break;
+    case 6:  diaEscrito = "Sábado"; break;
+    default: diaEscrito = "Dia Inválido";
+}
+
+document.write(`<p> Hoje é: ${diaEscrito} </p>`);
+
+let habilidades = ["Dedicado","Digitação","Lógica de Programação","Raciocínio Lógico"];
+
+for (let contem of habilidades) {
+  if (contem === "Digitação") {
+    document.write(`<p> João Pedro possui habilidade de ${contem}</p>`);
+  } else {
+    document.write(`<p> João Pedro não possui habilidade de ${contem}</p>`);
+  }
+} 
+
+// ─── QUIZ DE PERFIL ───────────────────────────────────────────
+
+const btnVisual = document.getElementById("btn-visual");
+const btnLogica = document.getElementById("btn-logica");
+const resultadoQuiz = document.getElementById("resultado-quiz");
+
+btnVisual.addEventListener("click", function() {
+  
+  resultadoQuiz.innerHTML = `
+    <strong>🎨 Você tem perfil Front-End!</strong><br>
+    Você curte criar interfaces, trabalhar com cores, layouts e a experiência do usuário.
+    Tecnologias pra você: HTML, CSS, React, Vue.
+  `;
+  resultadoQuiz.style.backgroundColor = "#e8f4fd";
+  resultadoQuiz.style.padding = "12px";
+  resultadoQuiz.style.borderRadius = "8px";
+  resultadoQuiz.style.marginTop = "10px";
+});
+
+btnLogica.addEventListener("click", function() {
+  
+  resultadoQuiz.innerHTML = `
+    <strong>⚙️ Você tem perfil Back-End!</strong><br>
+    Você curte resolver problemas complexos, trabalhar com dados e fazer a mágica acontecer nos bastidores.
+    Tecnologias pra você: Node.js, Python, bancos de dados.
+  `;
+  resultadoQuiz.style.backgroundColor = "#e8f8f0";
+  resultadoQuiz.style.padding = "12px";
+  resultadoQuiz.style.borderRadius = "8px";
+  resultadoQuiz.style.marginTop = "10px";
+});
+
+let pontosFront = 0;
+let pontosBack = 0;
+
+btnVisual.addEventListener("click", function() {
+  pontosFront++;
+  exibirPerfil();
+});
+
+btnLogica.addEventListener("click", function() {
+  pontosBack++;
+  exibirPerfil();
+});
+
+function exibirPerfil() {
+  if (pontosFront > pontosBack) {
+    resultadoQuiz.textContent = "🎨 Perfil Front-End!";
+  } else if (pontosBack > pontosFront) {
+    resultadoQuiz.textContent = "⚙️ Perfil Back-End!";
+  } else {
+    resultadoQuiz.textContent = "🔄 Perfil Full Stack — você é dos dois!";
+  }
+}
+
+/* 
+push()    → adiciona no FIM
+pop()     → remove do FIM
+unshift() → adiciona no INÍCIOa
+shift()   → remove do INÍCIO
+indexOf() → encontra o índice de um elemento
+splice()  → remove/insere em posição específica
+*/
+
+/*Inserção e remoção de itens*/
+let frutas = ["maçã","Banana","Laranja"];
+
+frutas.pop();//retira o último
+
+frutas.push("Abacaxi","Açaí");//adiciona no final
+
+frutas.unshift("Copuaçu","Nactarina");//adiciona no ínicio
+
+frutas.shift();//retira o primeiro
+
+console.log(frutas);
+//---------------------
+
+console.log(frutas.indexOf("Banana"));//retorna o índice do item
+console.log(frutas.includes("Kiwi"));//verifica se o item existe no array 
+console.log(frutas.length);//retorna o número de itens no array
+
+frutas.forEach(function(fruta) {
+    console.log(fruta);
+});
+
+frutas.splice(2,1, "Melancia");//remove um item a partir do índice e adiciona outro
+console.log(frutas);
+
+frutas.splice(1,0, "Goiaba");//adiciona um item a partir do índice sem remover n
+console.log(frutas);
+
+frutas.splice(3,2);//remove dois itens a partir do índice
+console.log(frutas);
+
+/* PROJETOS */
+
+let projetos = [
+{
+  nome : "Aplicação de Estacionamento",
+  tecnologias : ["Python","Tkinter","fpdf"],
+  descricao : "Aplicacao desktop para gerenciamento de Estacionamento "
+},
+{
+  nome : "Gerenciamento de Tarefas",
+  tecnologias : ["Python","Tkinter","SQlite","Json"],
+  descricao : "Aplicacao desktop para gerenciamento de Tarefas "
+}
+];
+
+});
+
+const nota = document.getElementeById("nota")
+nota.innerText = "A nota é"
+console.log("nota");
+
+const caixa = document.getElementById("caixa");
+caixa.innerText = "Esse texto foi mudado pelo JS";
+
+const botao = document.getElementById("mudaTexto");
+
+botao.addEventListener("click", function() {
+  caixa.innerText = "Voce mudou o texto clicando no botão!";
+  caixa.style.backgroundColor = "#f0a";
+});
+
+let input = document.getElementById("nome");
+
+botaoEnviar.addEventListener("click", function() {
+let texto = input.value;
+console.log(texto);
+caixa.innerText = `Olá, ${txto}! Bem-vindo ao meu portfólio!`;
+caixa.style.backgroundColor = "#0af";
+input.value = "";
+});

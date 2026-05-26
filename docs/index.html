@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>João Pedro | Frontend Developer</title>
+  <link rel="stylesheet" href="../styles/style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+  />
+</head>
+<body>
+<div class="port">
+  <nav class="nav">
+    <div class="nav-logo">João Pedro<span>.</span></div>
+    <div class="nav-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#serviços">Serviços</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </div>
+    <button id="btn-primary" onclick="scrollToSection('contato')">
+      <i class="ti ti-briefcase"></i>
+      Contratar
+    </button>
+    <button class="nav-mobile-btn" id="nav-toggle" aria-label="Menu">
+      <i class="ti ti-menu-2"></i>
+    </button>
+  </nav>
+
+  <div id="sobre" class="hero reveal">
+    <div class="sec-label">Sobre</div>
+    <div class="sec-title">Quem sou eu?</div>
+    <div class="badge"><span class="dot"></span> Disponível para projetos</div>
+    <h1>Olá, sou <em>João Pedro</em><br>Frontend Developer</h1>
+    <p>Crio interfaces modernas, rápidas e acessíveis com foco em experiência do usuário, performance e design responsivo. Transformo ideias em produtos digitais elegantes e funcionais.</p>
+    <div class="hero-actions">
+      <button id="btn-primary" onclick="scrollToSection('projetos')">
+        <i class="ti ti-briefcase" aria-hidden="true"></i>Ver projetos</button>
+    </div>
+    <div class="stat-row">
+      <div class="stat"><span class="stat-num counter" data-target="12">0</span><span class="stat-label">Projetos entregues</span></div>
+      <div class="stat"><span class="stat-num counter" data-target="3">0</span><span class="stat-label">Anos de experiência</span></div>
+      <div class="stat"><span class="stat-num" id="stat-commitment">0%</span><span class="stat-label">Comprometimento</span></div>
+    </div>
+  </div>
+
+  <div id="habilidades" class="section reveal">
+    <div class="sec-label">Habilidades</div>
+    <div class="sec-title">Linguagens & Tecnologias</div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <i class="ti ti-brand-html5 skill-icon" aria-hidden="true"></i>
+        <div class="skill-name">HTML5</div>
+        <div class="skill-level">Avançado</div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:0%" data-width="95%"></div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <i class="ti ti-brand-css3 skill-icon" aria-hidden="true"></i>
+        <div class="skill-name">CSS3</div>
+        <div class="skill-level">Avançado</div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:0%" data-width="90%"></div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <i class="ti ti-brand-javascript skill-icon" aria-hidden="true"></i>
+        <div class="skill-name">JavaScript</div>
+        <div class="skill-level">Iniciante</div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:0%" data-width="88%"></div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <i class="ti ti-brand-typescript skill-icon" aria-hidden="true"></i>
+        <div class="skill-name">TypeScript</div>
+        <div class="skill-level">Iniciante</div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:0%" data-width="72%"></div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <i class="ti ti-brand-react skill-icon" aria-hidden="true"></i>
+        <div class="skill-name">React</div>
+        <div class="skill-level">Avançado</div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:0%" data-width="85%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section reveal">
+    <div class="sec-label">Ferramentas</div>
+    <div class="sec-title">Stack & Ambiente de trabalho</div>
+    <div class="tools-wrap">
+      <span class="tool-tag"><i class="ti ti-brand-git" aria-hidden="true"></i> Git</span>
+      <span class="tool-tag"><i class="ti ti-brand-github" aria-hidden="true"></i> GitHub</span>
+      <span class="tool-tag"><i class="ti ti-brand-figma" aria-hidden="true"></i> Figma</span>
+      <span class="tool-tag"><i class="ti ti-brand-vscode" aria-hidden="true"></i> VS Code</span>
+      <span class="tool-tag">Firebase</span>
+      <span class="tool-tag">Responsive Design</span>
+    </div>
+  </div>
+
+  <div id="serviços" class="section reveal">
+    <div class="sec-label">Serviços</div>
+    <div class="sec-title">O que eu faço</div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-name">Landing Pages</div>
+        <div class="skill-level">Páginas modernas, rápidas e responsivas.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-name">Interfaces Web</div>
+        <div class="skill-level">Dashboards, sistemas e aplicações web.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-name">Responsividade</div>
+        <div class="skill-level">Experiência perfeita em qualquer dispositivo.</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="projetos" class="section reveal">
+    <div class="sec-label">Projetos</div>
+    <div class="sec-title">Trabalhos em destaque</div>
+    <div class="proj-grid">
+      <div class="proj-card" onclick="openProject('ecommerce')" role="button" tabindex="0" aria-label="Ver projeto E-commerce UI">
+        <div class="proj-top">
+          <div class="proj-icon"><i class="ti ti-shopping-cart" aria-hidden="true"></i></div>
+          <i class="ti ti-arrow-up-right proj-link" aria-hidden="true"></i>
+        </div>
+        <div class="proj-title">E-commerce UI</div>
+        <div class="proj-desc">Interface completa de loja virtual com carrinho, filtros dinâmicos e checkout responsivo.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">React</span>
+          <span class="proj-tag">TypeScript</span>
+          <span class="proj-tag">Tailwind</span>
+        </div>
+      </div>
+      <div class="proj-card" onclick="openProject('dashboard')" role="button" tabindex="0" aria-label="Ver projeto Dashboard Analytics">
+        <div class="proj-top">
+          <div class="proj-icon"><i class="ti ti-chart-line" aria-hidden="true"></i></div>
+          <i class="ti ti-arrow-up-right proj-link" aria-hidden="true"></i>
+        </div>
+        <div class="proj-title">Dashboard Analytics</div>
+        <div class="proj-desc">Painel de métricas em tempo real com gráficos interativos e autenticação segura.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">Next.js</span>
+          <span class="proj-tag">Firebase</span>
+          <span class="proj-tag">Recharts</span>
+        </div>
+      </div>
+      <div class="proj-card" onclick="openProject('tasks')" role="button" tabindex="0" aria-label="Ver projeto App de Tarefas">
+        <div class="proj-top">
+          <div class="proj-icon"><i class="ti ti-device-mobile" aria-hidden="true"></i></div>
+          <i class="ti ti-arrow-up-right proj-link" aria-hidden="true"></i>
+        </div>
+        <div class="proj-title">App de Tarefas</div>
+        <div class="proj-desc">Aplicativo mobile-first de produtividade com drag-and-drop e sincronização em nuvem.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">React</span>
+          <span class="proj-tag">Node.js</span>
+          <span class="proj-tag">REST API</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="contato" class="section reveal">
+    <div class="sec-label">Contato</div>
+    <div class="sec-title">Entre em Contato</div>
+    <div class="contact-box">
+      <div class="contact-title">Vamos trabalhar juntos?</div>
+      <div class="contact-sub">Estou aberto a oportunidades freelance, contratos e posições full-time. Entre em contato e vamos conversar sobre seu projeto.</div>
+      <div class="contact-links">
+        <a class="contact-link primary" href="mailto:joaopedro51374@gmail.com"><i class="ti ti-mail" aria-hidden="true"></i> Enviar e-mail</a>
+        <a class="contact-link" href="https://github.com/joaopedro1727" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github" aria-hidden="true"></i> GitHub</a>
+        <a class="contact-link" href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-linkedin" aria-hidden="true"></i> LinkedIn</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 João Pedro. Todos os direitos reservados.</p>
+    <p>Feito com <i class="ti ti-heart" style="color:#7c6af5;font-size:12px" aria-hidden="true"></i> e código</p>
+  </footer>
+</div>
+
+<!-- Modal de Projeto -->
+<div id="project-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()" aria-label="Fechar modal">
+      <i class="ti ti-x" aria-hidden="true"></i>
+    </button>
+    <div class="modal-icon" id="modal-icon"></div>
+    <div class="modal-title" id="modal-title"></div>
+    <div class="modal-desc" id="modal-desc"></div>
+    <div class="modal-tags" id="modal-tags"></div>
+    <div class="modal-actions">
+      <button id="btn-primary" onclick="closeModal()">
+        <i class="ti ti-arrow-left" aria-hidden="true"></i> Voltar
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast de notificação -->
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="../scripts/main.js" defer></script>
+</body>
+</html>
