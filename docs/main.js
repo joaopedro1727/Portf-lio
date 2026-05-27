@@ -229,3 +229,11 @@ skills.forEach(skill => {
 
   skillsContainer.appendChild(item);
 });
+
+// ─── BOTÃO CONTRATAR ─────────────────────────────────────────────────────────
+
+window.contratar = function () {
+  document.getElementById("contato")?.scrollIntoView({
+    behavior: "smooth"
+  });
+};
